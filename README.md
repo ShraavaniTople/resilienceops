@@ -1,6 +1,6 @@
 # ResilienceOps
 
-A pastel, clean Electron + React + Tailwind shell for an “Incident to Impact Orchestrator”. This is a demo UI showing incidents, API spec change placeholders, fix plan placeholders, and executions. It includes a “New Mock Incident” button and an auto-seeded mock incident on startup.
+Electron + React + Tailwind shell for an “Incident to Impact Orchestrator”. This is a demo UI showing incidents, API spec change placeholders, fix plan placeholders, and executions. It includes a “New Mock Incident” button and an auto seeded mock incident on startup.
 
 ## Prerequisites
 macOS, Node.js 18+ and npm installed. Verify with:
@@ -9,7 +9,7 @@ npm -v
 
 ## How to Run
 1. Clone the repository:
-git clone https://github.com/ShraavaniTople/resilienceops.git
+git clone https://github.com/ShraavaniTople/resilienceops
 cd resilienceops
 2. Install dependencies:
 npm install
