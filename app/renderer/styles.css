@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pastel background */
+:root{
+  --bg-a:#eef2ff;   /* pastel indigo */
+  --bg-b:#f8fbff;   /* near white */
+  --bg-c:#e6fffb;   /* pastel teal */
+}
+
+html,body,#root{height:100%}
+body{
+  @apply antialiased text-slate-800;
+  background:
+    radial-gradient(1000px 700px at 10% 0%, var(--bg-a), transparent 50%),
+    radial-gradient(900px 600px at 90% 0%, var(--bg-c), transparent 55%),
+    linear-gradient(180deg, var(--bg-b), #fff 30%);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container{ @apply max-w-6xl mx-auto px-6; }
+
+/* Header ribbon */
+.header{
+  @apply rounded-2xl border border-slate-200/70 backdrop-blur px-5 py-5 mb-6;
+  background: linear-gradient(120deg, #eef2ffcc, #e6fffbcc);
+}
+
+/* Card */
+.card{
+  @apply rounded-2xl border border-slate-200/70 bg-white/90 backdrop-blur p-6 shadow-[0_6px_20px_rgba(34,60,80,0.08)];
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.card:hover{ transform: translateY(-1px); box-shadow: 0 12px 26px rgba(34,60,80,0.12); }
+
+.card-title{ @apply text-[15px] font-semibold text-slate-900 mb-2 tracking-tight; }
+.card-desc{ @apply text-[13.5px] leading-6 text-slate-600; }
+.muted{ @apply text-slate-500; }
+
+/* Chips */
+.chips{ @apply flex flex-wrap gap-2 mt-3; }
+.chip{ @apply text-[12px] px-2.5 py-1 rounded-full border border-slate-200 bg-slate-50 text-slate-600; }
+
+/* Primary button */
+.btn{
+  @apply rounded-xl px-4 py-2 text-sm font-semibold text-white shadow border border-white/30;
+  background: linear-gradient(135deg,#6e7bf6,#69c1ff 60%,#5fe5c9);
+}
+.btn:hover{@apply opacity-95}
+.btn:active{@apply opacity-90}
+
+/* Toast */
+.toast{
+  @apply fixed bottom-4 right-4 z-50 rounded-xl px-4 py-3 text-sm font-medium text-slate-800 bg-white/95 shadow-lg border border-slate-200/80;
+}

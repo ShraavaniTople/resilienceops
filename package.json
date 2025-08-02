@@ -1,0 +1,57 @@
+{
+  "name": "resilienceops",
+  "version": "1.0.0",
+  "description": "ResilienceOps Desktop — Incident-to-Impact Orchestrator",
+  "type": "module",
+  "main": "dist-electron/main.mjs",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "npm run build:electron && concurrently -k -r \"npm:dev:renderer\" \"npm:dev:electron\"",
+    "build": "vite build && node scripts/build-electron.mjs",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "dev:renderer": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "build:electron": "node scripts/build-electron.mjs"
+  },
+  "build": {
+    "appId": "com.resilienceops.desktop",
+    "productName": "ResilienceOps",
+    "files": [
+      "app/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.developer-tools",
+      "darkModeSupport": true
+    }
+  },
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@vitejs/plugin-react": "*",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "*",
+    "electron": "*",
+    "electron-builder": "*",
+    "esbuild": "^0.25.8",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.10",
+    "typescript": "*",
+    "vite": "*",
+    "vite-plugin-electron": "*",
+    "vite-plugin-electron-renderer": "*",
+    "wait-on": "^8.0.4"
+  }
+}

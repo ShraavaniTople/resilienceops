@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# builds
+dist/
+dist-electron/
+out/
+*.log
+.DS_Store
+
+# misc
+*.local
+.env
